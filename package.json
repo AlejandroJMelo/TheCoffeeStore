@@ -7,6 +7,7 @@
     "description": "The Coffee Store",
     "main": "index.js",
     "scripts": {
+        "start": "node index",
         "dev": "nodemon index",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
