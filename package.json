@@ -1,0 +1,23 @@
+{
+    "name": "thecoffeestore",
+    "version": "0.0.1",
+    "description": "The Coffee Store",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AlejandroJMelo/TheCoffeeStore.git"
+    },
+    "keywords": [
+        "Coffee",
+        "Store"
+    ],
+    "author": "Alejandro Julian Melo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AlejandroJMelo/TheCoffeeStore/issues"
+    },
+    "homepage": "https://github.com/AlejandroJMelo/TheCoffeeStore#readme"
+}
