@@ -1,6 +1,9 @@
 {
     "name": "thecoffeestore",
     "version": "0.0.1",
+    "engines": {
+        "node": "14.6.0"
+    },
     "description": "The Coffee Store",
     "main": "index.js",
     "scripts": {
