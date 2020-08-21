@@ -6,9 +6,10 @@ const colors = require('colors');
 const dotenv = require('dotenv');
 dotenv.config({ path: "./config/prod/.env" });
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(require('./routes/user'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(require('./routes/user'));
+// app.use(require('./routes/home'));
 
 console.log(`[INFO] webserver port ${process.env.PORT}`.green);
 console.log(`[INFO] database mongo ${process.env.DB_URL}`.green);
@@ -22,6 +23,6 @@ mongoose.connect(process.env.DB_URL, {
     console.log('[INFO] MongoDB connected'.green);
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 80, () => {
     console.log(`[INFO] Web server started`.green);
 })
