@@ -132,6 +132,6 @@ app.delete('/user/:id', function(req, res) {
 })
 
 app.get('/', function(req, res) {
-    res.send('The Coffee Store')
+    res.send(`<html><h1>The Coffee Store</h1>${new Date}</html>`, )
 })
 module.exports = app;
