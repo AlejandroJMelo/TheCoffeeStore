@@ -8,11 +8,15 @@ dotenv.config({ path: "./config/prod/.env" });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(require('./routes/user'));
-// app.use(require('./routes/home'));
+
+//Routes
+app.use(require('./routes/index'));
+
 
 console.log(`[INFO] webserver port ${process.env.PORT}`.green);
 console.log(`[INFO] database mongo ${process.env.DB_URL}`.green);
+console.log(`[INFO] expiration token ${process.env.EXPIRATION_TOKEN}`.green);
+console.log(`[INFO] seed token ${process.env.SEED_TOKEN}`.green);
 
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,

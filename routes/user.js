@@ -30,8 +30,8 @@ app.get('/user', function(req, res) {
             User.countDocuments({ status: true }, (err, count) => {
 
                 res.json({
-                    ok: true,
-                    count: count,
+                    // ok: true,
+                    // count: count,
                     users
                 })
             })
