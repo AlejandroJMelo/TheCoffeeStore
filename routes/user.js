@@ -4,11 +4,13 @@ const app = express();
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const user = require('../models/user');
+const { tokenVerification } = require('../middlewares/authentication');
+const { roleVerification } = require('../middlewares/authentication');
 
 
 
 
-app.get('/user', function(req, res) {
+app.get('/user', tokenVerification, (req, res) => {
 
     let from = req.query.from || 0;
     from = Number(from);
@@ -39,7 +41,7 @@ app.get('/user', function(req, res) {
         })
 
 })
-app.post('/user', function(req, res) {
+app.post('/user', [tokenVerification, roleVerification], (req, res) => {
 
     let body = req.body;
 
@@ -68,7 +70,7 @@ app.post('/user', function(req, res) {
         console.log(`User ${userDB.name} saved `);
     })
 })
-app.put('/user/:id', function(req, res) {
+app.put('/user/:id', tokenVerification, (req, res) => {
     let id = req.params.id;
     let body = _.pick(req.body, ['name', 'email', 'role', 'status', 'img']);
 
@@ -86,7 +88,7 @@ app.put('/user/:id', function(req, res) {
     })
 
 })
-app.delete('/user/:id', function(req, res) {
+app.delete('/user/:id', tokenVerification, (req, res) => {
 
     // res.json({
     //     ok: true
