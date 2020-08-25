@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
+const path = require('path');
 const app = express();
 const colors = require('colors');
 const dotenv = require('dotenv');
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 //Routes
 app.use(require('./routes/index'));
 
+app.use(express.static(path.resolve(__dirname + '/public')));
 
 console.log(`[INFO] webserver port ${process.env.PORT}`.green);
 console.log(`[INFO] database mongo ${process.env.DB_URL}`.green);
